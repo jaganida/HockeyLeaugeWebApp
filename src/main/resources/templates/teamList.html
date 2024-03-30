@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team List</title>
+    </head>
+    <body>
+        <h1>Team List</h1>
+        <ul>
+            <!-- Populate teams dynamically -->
+            <li><a th:href="@{/team/{teamId}}" th:text="${team.name}">Team Name</a></li>
+        </ul>
+        <p><a href="/team/add">Add Team</a></p>
+        <p><a href="/">Back to Home</a></p>
+    </body>
+</html>

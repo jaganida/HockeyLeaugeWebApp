@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Team</title>
+</head>
+<body>
+    <h1>View Team Details</h1>
+    <p>Team Name: <span th:text="${team.name}">Team Name</span></p>
+    <p>Players:</p>
+    <ul>
+        <!-- Populate players dynamically -->
+        <li th:each="player : ${team.players}">
+            <a th:href="@{/player/{id}(id=${player.id})}" th:text="${player.name}">Player Name</a>
+        </li>
+    </ul>
+    <p><a href="/player/add">Add Player</a></p>
+    <p><a href="/team/list">Back to Team List</a></p>
+</body>
+</html>

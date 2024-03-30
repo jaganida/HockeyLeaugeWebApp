@@ -1,0 +1,49 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Hockey League Web App</title>
+</head>
+<body>
+    <h1>Welcome to Hockey League Web App</h1>
+    <p>This is the home page of the Hockey League Web App.</p>
+    <p><a href="/list">View Teams</a></p>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Team List</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <h1>HOCKEY LEAGUE</h1>
+    <h2>Team List</h2>
+    
+    <!-- Dropdown list to display teams -->
+    <label for="teamSelect">Select a Team:</label>
+    <select id="teamSelect">
+        <option th:each="team : ${teams}" th:value="${team.id}" th:text="${team.name}">Team Name</option>
+    </select>
+    
+    <!-- Button to add a new team -->
+    <button onclick="window.location.href='/addTeamForm'">Add Team</button>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="team : ${teams}">
+                <td th:text="${team.id}">ID</td>
+                <td th:text="${team.name}">Name</td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="window.location.href='/'">Back to Home</button>
+</body>
+</html>

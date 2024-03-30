@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Delete Player</title>
+    </head>
+    <body>
+        <h1>Delete Player</h1>
+        <p th:text="'Are you sure you want to delete ' + ${player.name} + '?'"></p>
+        <form th:action="@{/deletePlayerConfirmed}" method="post">
+            <button type="submit">Delete</button>
+            <button type="button" onclick="window.location.href = '/team/' + [[${player.teamId}]]">Cancel</button>
+        </form>
+    </body>
+</html>
